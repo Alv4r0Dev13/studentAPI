@@ -134,3 +134,4 @@ db.sqlite
 
 # Misc
 nodemon.json
+uploads/
