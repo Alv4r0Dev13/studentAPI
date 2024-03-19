@@ -10,6 +10,9 @@ database.init();
 import express from 'express';
 import routes from './src/routes';
 
+// Misc
+import { resolve } from 'path';
+
 class App {
   constructor() {
     this.app = express();
@@ -21,8 +24,7 @@ class App {
     // express
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
-
-    // database
+    this.app.use(express.static(resolve(__dirname, 'uploads')));
   }
 
   routes() {
