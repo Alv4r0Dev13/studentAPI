@@ -1,6 +1,6 @@
 import app from './app';
-const port = 3001;
+const port = process.env.PORT, url = process.env.HOST_URL;
 
 app.listen(port, () => {
-  console.log(`\nApp listening on port ${port}\nAccess http://localhost:${port}`);
+  console.log(`\nApp listening on port ${port}\nAccess ${url}`);
 });
