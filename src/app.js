@@ -3,12 +3,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // database
-import database from './src/database';
+import database from './database';
 database.init();
 
 // Express
 import express from 'express';
-import routes from './src/routes';
+import routes from './routes';
 
 // Misc
 import { resolve } from 'path';
