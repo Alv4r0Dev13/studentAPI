@@ -21,13 +21,14 @@ class TokenController {
           errors: ['Invalid password!'],
         });
 
+      const { id, name } = user;
       const token = jwt.sign(
-        { id: user.id, email },
+        { id, email },
         process.env.TOKEN_SECRET,
         { expiresIn: process.env.TOKEN_TIME }
       );
 
-      return res.status(200).json({ token });
+      return res.status(200).json({ token, user: { id, name, email } });
     } catch (err) {
       return res.status(500).json(null);
     }
